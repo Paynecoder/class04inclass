@@ -30,9 +30,7 @@ test.describe("Head tag area", () => {
 });
 
 test.describe("Main content tests", () => {
-  test("Should contain a heading welcome to my home page", async ({
-    page,
-  }) => {
+  test("Should contain a heading welcome to my home page", async ({ page }) => {
     await page.goto(homePage);
     await expect(page.locator("h1")).toContainText("Welcome to my home page");
 
@@ -79,7 +77,7 @@ test.describe("footer tests", () => {
 test.describe("check about pag navs to home page test", () => {
   test("should navigate from home pag to about page", async ({ page }) => {
     await page.goto(homePage);
-    await page.click('text=Go back');
+    await page.click("text=Go back");
     await expect(page).toHaveURL(homePage);
   });
 });
